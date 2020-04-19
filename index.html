@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <link rel="stylesheet" href="main.css">
+
+    <meta charset="UTF-8">
+    <title>Страничка</title>
+</head>
+<body>
+    <h1>Toyota Camry Solara</h1>
+    <img src="./blur/2.jpg" data-src="./img/1.jpg" class="img" alt="">
+    <p>Тойота Камри Соляра, 2 поколение 2003 – 2009, Купе: фото салона и экстерьера, объявления о продаже, технические характеристики, комплектации. Возможность сравнения с другими моделями и автомобилями. ... Технические характеристики и комплектации Toyota Camry Solara, 2 поколение (2003 – 2009). Toyota Camry Solara II 2003 – 2009 Купе. Купе. Кабриолет.</p>
+    <img src="./blur/1.jpg" class="img" data-src="./img/2.jpg" alt="">
+    <p>Второе поколение Camry Solara дебютировало в 2003 году для модельного года 2004 года, [7] первоначально предлагалось как купе; кабриолет второго поколения был представлен весной 2004 года в качестве модели 2005 года.[1] производство купе закончилось в середине 2008 года.[8] Несмотря на официальные заявления о том, что кабриолет может быть продан до 2010 года, если спрос будет достаточным, производство было приостановлено в декабре 2008 года и никогда не возобновлялось</p>
+    <div class="post">
+    <img src="./blur/3.jpg" data-src="./img/3.jpg" class="card-img-top" alt="">
+    <img src="./blur/4.jpg" data-src="./img/4.jpg" class="card-img-top" alt="">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quas, recusandae error esse ex dignissimos saepe, pariatur quasi praesentium. Aut deserunt ut, vitae optio incidunt sit officiis, voluptatem modi beatae ullam fugiat, fugit reprehenderit. Autem, laboriosam molestias ullam delectus eaque fugit hic praesentium exercitationem voluptate excepturi sit iure, voluptatem, nam aperiam non quam velit deserunt. Aliquam voluptatem nulla accusantium odio! Suscipit accusantium voluptates itaque corrupti soluta adipisci, sed, nemo facilis id, totam beatae officiis, maxime? Hic, dolores velit laborum eum libero maxime! Tenetur iusto, obcaecati. Optio perferendis saepe beatae eos mollitia quod iure nihil inventore hic maiores? Quo, aperiam, quam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus soluta perferendis iste incidunt iure sint distinctio quam dignissimos impedit porro, maxime, facilis aliquam explicabo alias possimus, repellat, numquam ut velit non tempora vero labore cupiditate consectetur? Magni delectus aliquam rem pariatur nemo, commodi blanditiis asperiores iste ullam quidem omnis, voluptatum!</p>
+    <img src="./blur/5.jpg" data-src="./img/5.jpg" class="card-img-top" alt="">
+    <img src="./blur/6.jpg" data-src="./img/6.jpg" class="card-img-top" alt="">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus quaerat fuga quisquam odio omnis, sunt laudantium? Asperiores, optio praesentium maxime porro adipisci ad natus quos! Doloremque unde quaerat nemo dolores sequi aspernatur sapiente sint natus nulla velit distinctio, accusamus harum magnam reiciendis sunt officiis labore assumenda ipsum! Rerum excepturi neque nulla est nostrum necessitatibus, incidunt ullam iusto vel temporibus tempora quaerat eum similique amet dolore a delectus, quam omnis error perferendis, tenetur! Maiores aliquam explicabo hic praesentium quidem ratione quo.</p>
+    <img src="./blur/7.jpg" data-src="./img/7.jpg" class="card-img-top" alt="">
+    </div>
+    <script>
+    let lazyArray = Array.from(document.querySelectorAll('.card-img-top'));
+    let scrollCounter = 0;
+       document.addEventListener('DOMContentLoaded', function() {
+          document.addEventListener('scroll', lazyLoad, false);
+   });
+
+
+        function lazyLoad() {
+            for (let lazy of lazyArray) {
+                if (lazy.hasAttribute('data-src') &&
+                    (lazy.getBoundingClientRect().top <= window.innerHeight)) {
+                    let data = lazy.getAttribute('data-src');
+                    lazy.setAttribute('src', data);
+                    if (lazy == lazyArray[0]) {
+                        lazyArray.shift()
+                    };
+                };
+            };
+        };
+        if (lazyArray.length == 0) {
+        document.addEventListener('scroll', lazyLoad);
+      };
+    </script>
+</body>
+</html>
